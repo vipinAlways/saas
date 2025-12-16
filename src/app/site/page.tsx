@@ -1,4 +1,8 @@
+"use client";
+
 import React from "react";
+import { Card } from "~/components/ui/card";
+import { pricingCards } from "~/lib/constans";
 
 const Home = () => {
   return (
@@ -10,6 +14,33 @@ const Home = () => {
           <h1 className="text-center text-9xl font-bold md:text-[300px]">
             Plura
           </h1>
+        </div>
+
+        <div className="relative flex items-center justify-center md:mt-[-90px]">
+          Preview{" "}
+          {/* TODO: add the preview image of app daskboard here 
+          <Image
+            src={"/assest/preview.png"}
+            alt="bannner img"
+            height={1200}
+            width={1200}
+            className="border-muted rounded-tl-2xl rounded-tr-2xl border-2"
+          /> */}
+          <div className="top-[50% ] dark: from-background absolute right-0 bottom-0 left-0 z-10 bg-linear-to-t"></div>
+        </div>
+      </section>
+
+      <section className="mt-20 flex flex-col items-center justify-center gap-4">
+        <h2 className="text-center text-4xl">Choose what fits you right</h2>
+        <p className="text-muted-foreground text-center">
+          Our straight forward pricing plans are tailored to meet your needs if{" "}
+          {"you're"} not <br /> ready to commit you get started for free
+        </p>
+
+        <div className="mt-6 flex flex-wrap items-center gap-4">
+          {pricingCards.map((card) => (
+            <Card key={card.title}></Card>
+          ))}
         </div>
       </section>
     </>
