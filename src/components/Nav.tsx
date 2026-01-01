@@ -11,6 +11,24 @@ import { ThemeToggle } from "./ThemeToggel";
 interface Props {
   user?: null | User;
 }
+const navLinks = [
+  {
+    name: "Pricing",
+    href: "pricing",
+  },
+  {
+    name: "About",
+    href: "#",
+  },
+  {
+    name: "Features",
+    href: "#",
+  },
+  {
+    name: "Docs",
+    href: "#",
+  },
+];
 
 const Nav = ({ user }: Props) => {
   const { data } = useSession();
@@ -24,10 +42,9 @@ const Nav = ({ user }: Props) => {
 
       <nav className="absolute top-1/2 left-1/2 hidden -translate-1/2 md:block">
         <ul className="flex items-center justify-center gap-8">
-          <Link href={"#"}>Pricing</Link>
-          <Link href={"#"}>About</Link>
-          <Link href={"#"}>Features</Link>
-          <Link href={"#"}>Docs</Link>
+          {navLinks.map(({ name, href }) => (
+            <Link href={href} key={href + name} className="">{name}</Link>
+          ))}
         </ul>
       </nav>
 
@@ -52,8 +69,7 @@ const Nav = ({ user }: Props) => {
           </Button>
         )}
 
-
-        <ThemeToggle/>
+        <ThemeToggle />
       </aside>
     </div>
   );
