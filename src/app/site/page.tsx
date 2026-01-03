@@ -18,7 +18,8 @@ const Home = () => {
         </div>
 
         <div className="relative flex items-center justify-center md:mt-[-90px]">
-          <Image
+          {/* //TODO: */}
+          {/* <Image
             src={"/img.png"}
             alt="bannner img"
             height={1200}
@@ -26,7 +27,7 @@ const Home = () => {
             className="border-muted rounded-tl-2xl rounded-tr-2xl border-2"
             loading="lazy"
             
-          />
+          /> */}
           <div className="top-[50% ] dark: from-background absolute right-0 bottom-0 left-0 z-10 bg-linear-to-t"></div>
         </div>
       </section>
